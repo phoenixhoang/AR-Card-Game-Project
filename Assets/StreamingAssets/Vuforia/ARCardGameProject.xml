@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="Eevee" size="0.063000 0.087818" />
+    <ImageTarget name="Pikachu" size="0.063000 0.087818" />
+  </Tracking>
+</QCARConfig>
