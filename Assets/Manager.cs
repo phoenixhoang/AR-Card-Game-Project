@@ -30,7 +30,8 @@ public class Manager : MonoBehaviour
     public Button [] attackOptions, itemOptions;
 
     // UI Text for pokemon names and the win or lose texts
-    public TextMeshProUGUI firstPokemonNameText, secondPokemonNameText, WinText, LoseText;
+    public TextMeshProUGUI firstPokemonNameText, secondPokemonNameText;
+    public TextMeshProUGUI WinText, LoseText;
 
     // Float for player target health and enemy target health for HP bar animation
     float targetHealthPlayer, targetHealthEnemy, lerp;
@@ -154,7 +155,7 @@ public class Manager : MonoBehaviour
         targetHealthEnemy = eeveePokemon.currentHP;
 
         // Start the soundtrack coroutine
-        StartCoroutine(PlayTune());
+        StartCoroutine(WaitTimer());
         Track.clip = Battle;
         Track.Play();
 
@@ -180,7 +181,7 @@ public class Manager : MonoBehaviour
         targetHealthEnemy = pikachuPokemon.currentHP;
 
         // Start the soundtrack coroutine
-        StartCoroutine(PlayTune());
+        StartCoroutine(WaitTimer());
         Track.clip = Battle;
         Track.Play();
 
@@ -190,7 +191,7 @@ public class Manager : MonoBehaviour
         ShowBattleMenu();
     }
 
-    IEnumerator PlayTune()
+    IEnumerator WaitTimer()
     {
         // Wait for 3 seconds
         yield return new WaitForSeconds(3);
