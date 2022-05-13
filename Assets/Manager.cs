@@ -37,7 +37,7 @@ public class Manager : MonoBehaviour
     float targetHealthPlayer, targetHealthEnemy, lerp;
 
     // Check if Pikachu and Eevee are tracked
-    public bool pikachuTracked, eeveeTracked;
+    public bool pikachuTracked, eeveeTracked, pokemonChosen;
 
     // Different audio clips for different game states
     public AudioClip Menu, Battle, Win;
@@ -71,6 +71,7 @@ public class Manager : MonoBehaviour
         Track.Play();
 
         updateEnabled = true;
+        pokemonChosen = false;
 
         // Set up Pokemon prefab
         SetupPokemon();
@@ -79,6 +80,17 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if player has chosen their Pokemon
+        if (pokemonChosen != true)
+        {
+            // If both pokemons are tracked, show the pokemon options
+            if (PikachuTracked == true && EeveeTracked == true)
+            {
+                ShowPokemonOptions();
+                pokemonChosen = true;
+            }
+        }
+
         // Only update when update is enabled
         if (updateEnabled == true)
         {
@@ -296,6 +308,7 @@ public class Manager : MonoBehaviour
         {
             // Heal the pokémon's hp depending on the item choice
             playerPokemon.currentHP += playerPokemon.Items[itemChoice].healPoints;
+            targetHealthPlayer = playerPokemon.currentHP;
 
             // Decrease the amount of that item by 1
             playerPokemon.Items[itemChoice].numberOfItems -= 1;

@@ -3296,6 +3296,7 @@ MonoBehaviour:
   LoseText: {fileID: 1290759547}
   pikachuTracked: 0
   eeveeTracked: 0
+  pokemonChosen: 0
   Menu: {fileID: 8300000, guid: a736b3c994c104847a36138a6c860b30, type: 3}
   Battle: {fileID: 8300000, guid: c01623d7c08e23e4594a13092ae1c186, type: 3}
   Win: {fileID: 8300000, guid: 9a511e5a114787444a6aef1065ce962b, type: 3}
@@ -7990,7 +7991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1858598769
 RectTransform:
   m_ObjectHideFlags: 0
